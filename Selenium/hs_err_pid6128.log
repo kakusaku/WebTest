@@ -1,0 +1,393 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x773a9ff9, pid=6128, tid=5172
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_40-b25) (build 1.8.0_40-b25)
+# Java VM: Java HotSpot(TM) Client VM (25.40-b25 mixed mode windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x49ff9]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0090d800):  JavaThread "main" [_thread_in_native, id=5172, stack(0x00800000,0x00850000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x755818f0, ECX=0x452aaea8, EDX=0x0000004f
+ESP=0x0084d750, EBP=0x0084d770, ESI=0x452aaea8, EDI=0x0000009e
+EIP=0x773a9ff9, EFLAGS=0x00010293
+
+Top of Stack: (sp=0x0084d750)
+0x0084d750:   0000004f 0084daa8 0084d878 0065006c
+0x0084d760:   00a0009e 452aaea8 00000000 00000000
+0x0084d770:   0084d810 773a9d87 eda55a9e 0084dafc
+0x0084d780:   00000000 00000208 0061006a 00610076
+0x0084d790:   002e0078 00000000 00000104 0000004f
+0x0084d7a0:   002d0074 00000104 00000208 0000009e
+0x0084d7b0:   002e0031 002e0030 0061006a 0084daa8
+0x0084d7c0:   00000000 00000000 0084d843 00000000 
+
+Instructions: (pc=0x773a9ff9)
+0x773a9fd9:   4b 41 89 4d a4 46 89 75 b0 e9 7b fe ff ff 8b cf
+0x773a9fe9:   83 c0 02 d1 e9 8d 0c 4e 3b c1 0f 83 5b fc ff ff
+0x773a9ff9:   66 8b 08 66 83 c9 20 0f b7 c9 83 f9 70 74 18 83
+0x773aa009:   f9 63 74 13 83 f9 6e 74 0e 83 f9 61 74 09 83 f9 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x755818f0 is an unknown value
+ECX=0x452aaea8 is an unknown value
+EDX=0x0000004f is an unknown value
+ESP=0x0084d750 is pointing into the stack for thread: 0x0090d800
+EBP=0x0084d770 is pointing into the stack for thread: 0x0090d800
+ESI=0x452aaea8 is an unknown value
+EDI=0x0000009e is an unknown value
+
+
+Stack: [0x00800000,0x00850000],  sp=0x0084d750,  free space=309k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x49ff9]
+C  [ntdll.dll+0x49d87]
+C  [ntdll.dll+0x4a4d5]
+C  [ntdll.dll+0x604c1]
+C  [KERNELBASE.dll+0x15149]
+C  [KERNELBASE.dll+0x15072]
+C  [java.dll+0x8090]
+j  java.io.WinNTFileSystem.getLastModifiedTime(Ljava/io/File;)J+0
+j  java.io.File.lastModified()J+29
+j  java.util.zip.ZipFile.<init>(Ljava/io/File;ILjava/nio/charset/Charset;)V+142
+j  java.util.zip.ZipFile.<init>(Ljava/io/File;I)V+6
+j  java.util.jar.JarFile.<init>(Ljava/io/File;ZI)V+3
+j  java.util.jar.JarFile.<init>(Ljava/lang/String;)V+11
+j  sun.misc.URLClassPath$JarLoader.getJarFile(Ljava/net/URL;)Ljava/util/jar/JarFile;+44
+j  sun.misc.URLClassPath$JarLoader.access$700(Lsun/misc/URLClassPath$JarLoader;Ljava/net/URL;)Ljava/util/jar/JarFile;+2
+j  sun.misc.URLClassPath$JarLoader$1.run()Ljava/lang/Void;+55
+j  sun.misc.URLClassPath$JarLoader$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0x106eaf]
+C  [java.dll+0x1047]
+j  sun.misc.URLClassPath$JarLoader.ensureOpen()V+15
+j  sun.misc.URLClassPath$JarLoader.<init>(Ljava/net/URL;Ljava/net/URLStreamHandler;Ljava/util/HashMap;)V+137
+j  sun.misc.URLClassPath$3.run()Lsun/misc/URLClassPath$Loader;+82
+j  sun.misc.URLClassPath$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0x106eaf]
+C  [java.dll+0x1047]
+j  sun.misc.URLClassPath.getLoader(Ljava/net/URL;)Lsun/misc/URLClassPath$Loader;+9
+j  sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader;+87
+j  sun.misc.URLClassPath.getNextLoader([II)Lsun/misc/URLClassPath$Loader;+84
+j  sun.misc.URLClassPath.access$100(Lsun/misc/URLClassPath;[II)Lsun/misc/URLClassPath$Loader;+3
+j  sun.misc.URLClassPath$1.next()Z+28
+j  sun.misc.URLClassPath$1.hasMoreElements()Z+1
+j  java.net.URLClassLoader$3$1.run()Ljava/net/URL;+7
+j  java.net.URLClassLoader$3$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0x106eaf]
+C  [java.dll+0x102f]
+j  java.net.URLClassLoader$3.next()Z+24
+j  java.net.URLClassLoader$3.hasMoreElements()Z+1
+j  sun.misc.CompoundEnumeration.next()Z+33
+j  sun.misc.CompoundEnumeration.hasMoreElements()Z+1
+j  org.apache.commons.logging.LogFactory.getConfigurationFile(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/util/Properties;+23
+j  org.apache.commons.logging.LogFactory.getFactory()Lorg/apache/commons/logging/LogFactory;+70
+j  org.apache.commons.logging.LogFactory.getLog(Ljava/lang/Class;)Lorg/apache/commons/logging/Log;+0
+j  org.apache.http.conn.ssl.AbstractVerifier.<init>()V+9
+j  org.apache.http.conn.ssl.AllowAllHostnameVerifier.<init>()V+1
+j  org.apache.http.conn.ssl.AllowAllHostnameVerifier.<clinit>()V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0xbe7db]
+V  [jvm.dll+0xbf987]
+V  [jvm.dll+0xbfab8]
+V  [jvm.dll+0x82190]
+V  [jvm.dll+0x82f1a]
+V  [jvm.dll+0x7e8a7]
+j  org.apache.http.conn.ssl.SSLConnectionSocketFactory.<clinit>()V+0
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0xbe7db]
+V  [jvm.dll+0xbf987]
+V  [jvm.dll+0xbfab8]
+V  [jvm.dll+0x83be6]
+V  [jvm.dll+0x84c12]
+V  [jvm.dll+0x80227]
+j  org.openqa.selenium.remote.internal.HttpClientFactory.getClientConnectionManager()Lorg/apache/http/conn/HttpClientConnectionManager;+13
+j  org.openqa.selenium.remote.internal.HttpClientFactory.<init>(II)V+5
+j  org.openqa.selenium.remote.internal.HttpClientFactory.<init>()V+7
+j  org.openqa.selenium.remote.internal.ApacheHttpClient$Factory.getDefaultHttpClientFactory()Lorg/openqa/selenium/remote/internal/HttpClientFactory;+10
+j  org.openqa.selenium.remote.internal.ApacheHttpClient$Factory.<init>()V+1
+j  org.openqa.selenium.remote.HttpCommandExecutor.getDefaultClientFactory()Lorg/openqa/selenium/remote/http/HttpClient$Factory;+10
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/util/Map;Ljava/net/URL;)V+3
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/net/URL;)V+5
+j  org.openqa.selenium.remote.service.DriverCommandExecutor.<init>(Lorg/openqa/selenium/remote/service/DriverService;)V+5
+j  org.openqa.selenium.ie.InternetExplorerDriver.run(Lorg/openqa/selenium/ie/InternetExplorerDriverService;Lorg/openqa/selenium/Capabilities;)V+10
+j  org.openqa.selenium.ie.InternetExplorerDriver.<init>(Lorg/openqa/selenium/ie/InternetExplorerDriverService;Lorg/openqa/selenium/Capabilities;I)V+57
+j  org.openqa.selenium.ie.InternetExplorerDriver.<init>()V+4
+j  test.main([Ljava/lang/String;)V+24
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x155c05]
+V  [jvm.dll+0x21b0be]
+V  [jvm.dll+0x155c9e]
+V  [jvm.dll+0xdab27]
+V  [jvm.dll+0xe30cf]
+C  [javaw.exe+0x229a]
+C  [javaw.exe+0xadff]
+C  [javaw.exe+0xae89]
+...<more frames>...
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.io.WinNTFileSystem.getLastModifiedTime(Ljava/io/File;)J+0
+j  java.io.File.lastModified()J+29
+j  java.util.zip.ZipFile.<init>(Ljava/io/File;ILjava/nio/charset/Charset;)V+142
+j  java.util.zip.ZipFile.<init>(Ljava/io/File;I)V+6
+j  java.util.jar.JarFile.<init>(Ljava/io/File;ZI)V+3
+j  java.util.jar.JarFile.<init>(Ljava/lang/String;)V+11
+j  sun.misc.URLClassPath$JarLoader.getJarFile(Ljava/net/URL;)Ljava/util/jar/JarFile;+44
+j  sun.misc.URLClassPath$JarLoader.access$700(Lsun/misc/URLClassPath$JarLoader;Ljava/net/URL;)Ljava/util/jar/JarFile;+2
+j  sun.misc.URLClassPath$JarLoader$1.run()Ljava/lang/Void;+55
+j  sun.misc.URLClassPath$JarLoader$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  sun.misc.URLClassPath$JarLoader.ensureOpen()V+15
+j  sun.misc.URLClassPath$JarLoader.<init>(Ljava/net/URL;Ljava/net/URLStreamHandler;Ljava/util/HashMap;)V+137
+j  sun.misc.URLClassPath$3.run()Lsun/misc/URLClassPath$Loader;+82
+j  sun.misc.URLClassPath$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  sun.misc.URLClassPath.getLoader(Ljava/net/URL;)Lsun/misc/URLClassPath$Loader;+9
+j  sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader;+87
+j  sun.misc.URLClassPath.getNextLoader([II)Lsun/misc/URLClassPath$Loader;+84
+j  sun.misc.URLClassPath.access$100(Lsun/misc/URLClassPath;[II)Lsun/misc/URLClassPath$Loader;+3
+j  sun.misc.URLClassPath$1.next()Z+28
+j  sun.misc.URLClassPath$1.hasMoreElements()Z+1
+j  java.net.URLClassLoader$3$1.run()Ljava/net/URL;+7
+j  java.net.URLClassLoader$3$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader$3.next()Z+24
+j  java.net.URLClassLoader$3.hasMoreElements()Z+1
+j  sun.misc.CompoundEnumeration.next()Z+33
+j  sun.misc.CompoundEnumeration.hasMoreElements()Z+1
+j  org.apache.commons.logging.LogFactory.getConfigurationFile(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/util/Properties;+23
+j  org.apache.commons.logging.LogFactory.getFactory()Lorg/apache/commons/logging/LogFactory;+70
+j  org.apache.commons.logging.LogFactory.getLog(Ljava/lang/Class;)Lorg/apache/commons/logging/Log;+0
+j  org.apache.http.conn.ssl.AbstractVerifier.<init>()V+9
+j  org.apache.http.conn.ssl.AllowAllHostnameVerifier.<init>()V+1
+j  org.apache.http.conn.ssl.AllowAllHostnameVerifier.<clinit>()V+4
+v  ~StubRoutines::call_stub
+j  org.apache.http.conn.ssl.SSLConnectionSocketFactory.<clinit>()V+0
+v  ~StubRoutines::call_stub
+j  org.openqa.selenium.remote.internal.HttpClientFactory.getClientConnectionManager()Lorg/apache/http/conn/HttpClientConnectionManager;+13
+j  org.openqa.selenium.remote.internal.HttpClientFactory.<init>(II)V+5
+j  org.openqa.selenium.remote.internal.HttpClientFactory.<init>()V+7
+j  org.openqa.selenium.remote.internal.ApacheHttpClient$Factory.getDefaultHttpClientFactory()Lorg/openqa/selenium/remote/internal/HttpClientFactory;+10
+j  org.openqa.selenium.remote.internal.ApacheHttpClient$Factory.<init>()V+1
+j  org.openqa.selenium.remote.HttpCommandExecutor.getDefaultClientFactory()Lorg/openqa/selenium/remote/http/HttpClient$Factory;+10
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/util/Map;Ljava/net/URL;)V+3
+j  org.openqa.selenium.remote.HttpCommandExecutor.<init>(Ljava/net/URL;)V+5
+j  org.openqa.selenium.remote.service.DriverCommandExecutor.<init>(Lorg/openqa/selenium/remote/service/DriverService;)V+5
+j  org.openqa.selenium.ie.InternetExplorerDriver.run(Lorg/openqa/selenium/ie/InternetExplorerDriverService;Lorg/openqa/selenium/Capabilities;)V+10
+j  org.openqa.selenium.ie.InternetExplorerDriver.<init>(Lorg/openqa/selenium/ie/InternetExplorerDriverService;Lorg/openqa/selenium/Capabilities;I)V+57
+j  org.openqa.selenium.ie.InternetExplorerDriver.<init>()V+4
+j  test.main([Ljava/lang/String;)V+24
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x44a67c00 JavaThread "Service Thread" daemon [_thread_blocked, id=6636, stack(0x45090000,0x450e0000)]
+  0x44a3d400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8928, stack(0x45000000,0x45050000)]
+  0x44a35c00 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=3736, stack(0x44f70000,0x44fc0000)]
+  0x44a30c00 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=7984, stack(0x44ee0000,0x44f30000)]
+  0x44a2f800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=8440, stack(0x44e50000,0x44ea0000)]
+  0x449ff800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7652, stack(0x44dc0000,0x44e10000)]
+  0x44a29400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1348, stack(0x44d30000,0x44d80000)]
+  0x449d7800 JavaThread "Finalizer" daemon [_thread_blocked, id=9112, stack(0x44ca0000,0x44cf0000)]
+  0x449d2c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=1240, stack(0x44c10000,0x44c60000)]
+=>0x0090d800 JavaThread "main" [_thread_in_native, id=5172, stack(0x00800000,0x00850000)]
+
+Other Threads:
+  0x00a0d800 VMThread [stack: 0x041a0000,0x041f0000] [id=7988]
+  0x44a6a000 WatcherThread [stack: 0x45120000,0x45170000] [id=4456]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 314560K, used 27962K [0x04200000, 0x19750000, 0x19750000)
+  eden space 279616K,  10% used [0x04200000, 0x05d4e878, 0x15310000)
+  from space 34944K,   0% used [0x15310000, 0x15310000, 0x17530000)
+  to   space 34944K,   0% used [0x17530000, 0x17530000, 0x19750000)
+ tenured generation   total 699072K, used 0K [0x19750000, 0x44200000, 0x44200000)
+   the space 699072K,   0% used [0x19750000, 0x19750000, 0x19750200, 0x44200000)
+ Metaspace       used 4107K, capacity 4322K, committed 4416K, reserved 4480K
+
+Card table byte_map: [0x44200000,0x44410000] byte_map_base: 0x441df000
+
+Polling page: 0x00380000
+
+CodeCache: size=32768Kb used=953Kb max_used=953Kb free=31814Kb
+ bounds [0x02160000, 0x02250000, 0x04160000]
+ total_blobs=342 nmethods=199 adapters=83
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 3.605 Thread 0x44a3d400  194             java.net.URL::getAuthority (5 bytes)
+Event: 3.605 Thread 0x44a3d400 nmethod 194 0x0224d748 code [0x0224d840, 0x0224d8c0]
+Event: 3.607 Thread 0x44a3d400  195             sun.util.calendar.CalendarDate::isNormalized (5 bytes)
+Event: 3.607 Thread 0x44a3d400 nmethod 195 0x0224d908 code [0x0224da00, 0x0224da80]
+Event: 3.611 Thread 0x44a3d400  196             java.util.jar.Attributes$Name::isValid (45 bytes)
+Event: 3.611 Thread 0x44a3d400 nmethod 196 0x0224dac8 code [0x0224dbe0, 0x0224ddec]
+Event: 3.611 Thread 0x44a3d400  197             java.util.jar.Attributes$Name::isValid (32 bytes)
+Event: 3.611 Thread 0x44a3d400 nmethod 197 0x0224e008 code [0x0224e100, 0x0224e210]
+Event: 3.611 Thread 0x44a3d400  198             java.util.jar.Attributes$Name::isAlpha (30 bytes)
+Event: 3.611 Thread 0x44a3d400 nmethod 198 0x0224e288 code [0x0224e380, 0x0224e440]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (8 events):
+Event: 0.040 Thread 0x0090d800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x042108b0) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\j½á.Ä¤?
+Event: 0.041 Thread 0x0090d800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x04210b30) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\jniB@c¾I"@
+Event: 3.392 Thread 0x0090d800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x047268d8) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+Event: 3.401 Thread 0x0090d800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x04733ac8) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\methodHandles.cpp, line 1125]
+Event: 3.545 Thread 0x0090d800 Exception <a 'java/security/PrivilegedActionException'> (0x0592d338) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 3.545 Thread 0x0090d800 Exception <a 'java/security/PrivilegedActionException'> (0x0592d678) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 3.547 Thread 0x0090d800 Exception <a 'java/security/PrivilegedActionException'> (0x0592ff28) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 3.547 Thread 0x0090d800 Exception <a 'java/security/PrivilegedActionException'> (0x05930268) thrown at [D:\re\puppet\workspace\8-2-build-windows-i586-cygwin\jdk8u40\2855\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+
+Events (10 events):
+Event: 3.617 loading class org/apache/commons/logging/impl/WeakHashtable
+Event: 3.617 loading class org/apache/commons/logging/impl/WeakHashtable done
+Event: 3.619 loading class org/apache/commons/logging/LogFactory$1
+Event: 3.619 loading class org/apache/commons/logging/LogFactory$1 done
+Event: 3.620 loading class org/apache/commons/logging/impl/WeakHashtable$Referenced
+Event: 3.620 loading class org/apache/commons/logging/impl/WeakHashtable$Referenced done
+Event: 3.620 loading class org/apache/commons/logging/impl/WeakHashtable$WeakKey
+Event: 3.620 loading class org/apache/commons/logging/impl/WeakHashtable$WeakKey done
+Event: 3.621 loading class org/apache/commons/logging/LogFactory$4
+Event: 3.621 loading class org/apache/commons/logging/LogFactory$4 done
+
+
+Dynamic libraries:
+0x00a40000 - 0x00a73000 	C:\Apps\pleiades\java\8\bin\javaw.exe
+0x77360000 - 0x774cf000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75570000 - 0x756b0000 	C:\Windows\SYSTEM32\KERNEL32.DLL
+0x75070000 - 0x75147000 	C:\Windows\SYSTEM32\KERNELBASE.dll
+0x718f0000 - 0x71990000 	C:\Windows\system32\apphelp.dll
+0x61ef0000 - 0x62156000 	C:\Windows\AppPatch\AcGenral.DLL
+0x74cd0000 - 0x74d93000 	C:\Windows\SYSTEM32\msvcrt.dll
+0x754d0000 - 0x75511000 	C:\Windows\SYSTEM32\sechost.dll
+0x74cb0000 - 0x74cce000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x74c60000 - 0x74ca5000 	C:\Windows\SYSTEM32\SHLWAPI.dll
+0x73d70000 - 0x73e5d000 	C:\Windows\SYSTEM32\UxTheme.dll
+0x75a00000 - 0x75b53000 	C:\Windows\SYSTEM32\USER32.dll
+0x74b50000 - 0x74c5e000 	C:\Windows\SYSTEM32\GDI32.dll
+0x71c70000 - 0x71c93000 	C:\Windows\SYSTEM32\WINMM.dll
+0x6cf60000 - 0x6cf73000 	C:\Windows\SYSTEM32\samcli.dll
+0x75150000 - 0x75279000 	C:\Windows\SYSTEM32\ole32.dll
+0x74e50000 - 0x74ee7000 	C:\Windows\SYSTEM32\OLEAUT32.dll
+0x6cf40000 - 0x6cf57000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x741c0000 - 0x741c8000 	C:\Windows\SYSTEM32\VERSION.dll
+0x75c70000 - 0x76f2b000 	C:\Windows\SYSTEM32\SHELL32.dll
+0x74190000 - 0x741ab000 	C:\Windows\SYSTEM32\USERENV.dll
+0x73d50000 - 0x73d6a000 	C:\Windows\SYSTEM32\dwmapi.dll
+0x71b20000 - 0x71c6b000 	C:\Windows\SYSTEM32\urlmon.dll
+0x77090000 - 0x7710c000 	C:\Windows\SYSTEM32\ADVAPI32.dll
+0x740d0000 - 0x74135000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x74720000 - 0x74736000 	C:\Windows\SYSTEM32\MPR.dll
+0x75280000 - 0x7533a000 	C:\Windows\SYSTEM32\RPCRT4.dll
+0x74b40000 - 0x74b4a000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x77110000 - 0x7728d000 	C:\Windows\SYSTEM32\combase.dll
+0x71af0000 - 0x71b13000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x73e60000 - 0x73e6f000 	C:\Windows\SYSTEM32\profapi.dll
+0x71ca0000 - 0x71ed5000 	C:\Windows\SYSTEM32\iertutil.dll
+0x73aa0000 - 0x73d4b000 	C:\Windows\SYSTEM32\WININET.dll
+0x74ae0000 - 0x74b34000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x77050000 - 0x7708c000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x749b0000 - 0x749d1000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x74900000 - 0x7498b000 	C:\Windows\SYSTEM32\SHCORE.DLL
+0x75540000 - 0x75567000 	C:\Windows\system32\IMM32.DLL
+0x76f30000 - 0x77042000 	C:\Windows\SYSTEM32\MSCTF.dll
+0x73890000 - 0x73a96000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.18006_none_a9ec6aab013aafee\COMCTL32.dll
+0x625d0000 - 0x6268f000 	C:\Apps\pleiades\java\8\jre\bin\msvcr100.dll
+0x60720000 - 0x60ae0000 	C:\Apps\pleiades\java\8\jre\bin\client\jvm.dll
+0x6d630000 - 0x6d638000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x75060000 - 0x75066000 	C:\Windows\SYSTEM32\PSAPI.DLL
+0x74da0000 - 0x74def000 	C:\Windows\SYSTEM32\WS2_32.dll
+0x75830000 - 0x75837000 	C:\Windows\SYSTEM32\NSI.dll
+0x709e0000 - 0x709ec000 	C:\Apps\pleiades\java\8\jre\bin\verify.dll
+0x62730000 - 0x62751000 	C:\Apps\pleiades\java\8\jre\bin\java.dll
+0x62700000 - 0x62729000 	C:\Apps\pleiades\java\8\jre\bin\jdwp.dll
+0x70630000 - 0x70637000 	C:\Apps\pleiades\java\8\jre\bin\npt.dll
+0x61ed0000 - 0x61ee3000 	C:\Apps\pleiades\java\8\jre\bin\zip.dll
+0x6e650000 - 0x6e658000 	C:\Apps\pleiades\java\8\jre\bin\dt_socket.dll
+0x6d610000 - 0x6d621000 	C:\Windows\system32\napinsp.dll
+0x6d5f0000 - 0x6d606000 	C:\Windows\system32\pnrpnsp.dll
+0x71ac0000 - 0x71ad4000 	C:\Windows\system32\NLAapi.dll
+0x6d5a0000 - 0x6d5eb000 	C:\Windows\System32\mswsock.dll
+0x6d520000 - 0x6d59e000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x6d4e0000 - 0x6d4ea000 	C:\Windows\System32\winrnr.dll
+0x6d4d0000 - 0x6d4e0000 	C:\Windows\system32\wshbth.dll
+0x6d480000 - 0x6d4c6000 	C:\Windows\System32\fwpuclnt.dll
+0x6d470000 - 0x6d478000 	C:\Windows\System32\rasadhlp.dll
+0x61eb0000 - 0x61ec5000 	C:\Apps\pleiades\java\8\jre\bin\net.dll
+0x61c80000 - 0x61dc1000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:50392 -Xms1024m -Xmx1024m -Dfile.encoding=UTF-8 
+java_command: test
+java_class_path (initial): D:\project\199_universal\ue_ngss\HS3\trunk\Selenium\bin;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\client-combined-3.4.0-nodeps.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\cglib-nodep-3.2.4.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\commons-codec-1.10.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\commons-exec-1.3.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\commons-io-2.5.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\commons-lang3-3.5.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\commons-logging-1.2.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\cssparser-0.9.22.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\gson-2.8.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\guava-21.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\hamcrest-core-1.3.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\htmlunit-2.26.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\htmlunit-core-js-2.26.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\htmlunit-driver-2.26.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\httpclient-4.5.3.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\httpcore-4.4.6.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\httpmime-4.5.3.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\javax.servlet-api-3.1.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\jetty-io-9.4.1.v20170120.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\jetty-util-9.4.1.v20170120.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\jna-4.1.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\jna-platform-4.1.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\junit-4.12.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\neko-htmlunit-2.25.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\phantomjsdriver-1.4.0.jar;C:\Users\kakusaku\Downloads\selenium-java-3.4.0\lib\sac-1.3.jar;C
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_111
+PATH=C:\Apps\pleiades\java\8\jre\bin;C:/Apps/pleiades/eclipse/jre/bin/../jre/bin/client;C:/Apps/pleiades/eclipse/jre/bin/../jre/bin;C:/Apps/pleiades/eclipse/jre/bin/../jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.2 & MySQL Utilities 1.5.2 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5.2 & MySQL Utilities 1.5.2 1.5\Doctrine extensions for PHP\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Apps\pleiades\eclipse;
+USERNAME=kakusaku
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8301712k(2060176k free), swap 16166032k(4638404k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.40-b25) for windows-x86 JRE (1.8.0_40-b25), built on Feb 10 2015 21:08:16 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Jun 08 13:18:06 2017
+elapsed time: 3 seconds (0d 0h 0m 3s)
+
